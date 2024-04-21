@@ -10,7 +10,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9    
-
+      
+      - name: List files in root directory
+        run: ls
+    
       - name: Run Python script to send email
         run: python send_email1.py
         env:
