@@ -15,7 +15,8 @@ jobs:
         run: dir
     
       - name: Run Python script to send email
-        run: python D:\a\RDP\RDP\send_email1.py\send_email1.py
+        run: python send_email1.py
+        working-directory: D:\a\RDP\RDP
         env:
           SMTP_SERVER: "${{ secrets.SMTP_SERVER }}"
           SMTP_PORT: "${{ secrets.SMTP_PORT }}"
