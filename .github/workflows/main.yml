@@ -9,14 +9,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9    
-      
+          python-version: 3.9
+    
+      - name: Print current directory
+        run: echo "Current directory: $PWD"
+    
       - name: List files in root directory
         run: dir
-    
+      
       - name: Run Python script to send email
         run: python send_email1.py
-        working-directory: D:\a\RDP\RDP
         env:
           SMTP_SERVER: "${{ secrets.SMTP_SERVER }}"
           SMTP_PORT: "${{ secrets.SMTP_PORT }}"
